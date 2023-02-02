@@ -34,6 +34,7 @@ This form control contains some resource strings that will need to be added to y
 * `requiredagreementcomponent.errormessage.tooltip`
   * *A custom error message to display when the checkbox is not selected. Can include localization macros.*
 
+## Usage
 When using the required agreement in a form, note that the **Label** property controls the label for the overall field, while the **Text** property creates an inline label for the textbox specifically. The **Text** field allows you to HTML markup. For example, entering `I have read and agree to the <a href="https://www.google.com">Terms and Conditions</a>` into the **Text** property will include a hyperlink to google.com in the inline checkbox label.
 
 A custom error message can be entered in the **Error message** field. If it is left blank, the component will fall back to the default `requiredagreementcomponent.error.notchecked` resource string value.
