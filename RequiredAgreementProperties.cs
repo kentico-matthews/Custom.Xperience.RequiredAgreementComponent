@@ -40,6 +40,17 @@ namespace CustomFormComponent.RequiredAgreement
 
 
         /// <summary>
+        /// Represents a custom error message overriding the default set by the requiredagreementcomponent.notchecked resource string.
+        /// </summary>
+        [EditingComponent(TextInputComponent.IDENTIFIER, Label = "{$requiredagreementcomponent.errormessage.name$}",Tooltip = "{$requiredagreementcomponent.errormessage.tooltip$}")]
+        public string ErrorMessage
+        {
+            get;
+            set;
+        }
+
+
+        /// <summary>
         /// Represents whether the form component is required.
         /// </summary>
         /// <remarks>

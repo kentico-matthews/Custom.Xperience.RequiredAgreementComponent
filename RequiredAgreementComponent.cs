@@ -61,7 +61,8 @@ namespace CustomFormComponent.RequiredAgreement
             //if the checkbox is not checked
             if(!Value)
             {
-                errors.Add(new ValidationResult(ResHelper.GetString("requiredagreementcomponent.notchecked")));
+                string errorMessage = string.IsNullOrEmpty(Properties.ErrorMessage) ? ResHelper.GetString("requiredagreementcomponent.error.notchecked") : ResHelper.LocalizeString(Properties.ErrorMessage);
+                errors.Add(new ValidationResult(errorMessage));
             }
 
             return errors;

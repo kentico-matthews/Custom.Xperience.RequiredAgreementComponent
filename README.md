@@ -22,12 +22,20 @@ However, you likely have an existing setup with your own conventions for where t
       * If you stored the view in **~/Views/Shared/FormComponents**, the **ViewName** parameter can be removed from the **RegisterFormComponent** attribute.
 
 ## Setup
-This form control contains some resource strings that will need to be added to your site. Add resource strings with the following keys in the **Localization** app. Suggested values are included, but you can set them to whatever you want.
-* **RequiredAgreementcomponent.name**
+This form control contains some resource strings that will need to be added to your site. Add resource strings with the following keys in the **Localization** app. Sample values are included, but you can set them to whatever you want.
+* `requiredagreementcomponent.name`
    * *Required agreement*
-* **RequiredAgreementcomponent.description**
-   * *Provides a checkbox field that saves a boolean value (true for a selected checkbox, false for a cleared checkbox). This custom checkbox can be marked as required, so that a form submission will fail validation if the checkbox is cleared.*
-* **RequiredAgreementcomponent.notchecked**
+* `requiredagreementcomponent.description`
+   * *Provides a checkbox that must be selected in order for the form submission to pass validation. Ideal for mandatory agreements that are necessary in order to process the form submission.*
+* `requiredagreementcomponent.error.notchecked`
    * *This value must be selected to submit the form.*
+* `requiredagreementcomponent.errormessage.name`
+   * *Error message*
+* `requiredagreementcomponent.errormessage.tooltip`
+  * *A custom error message to display when the checkbox is not selected. Can include localization macros.*
 
 When using the required agreement in a form, note that the **Label** property controls the label for the overall field, while the **Text** property creates an inline label for the textbox specifically. The **Text** field allows you to HTML markup. For example, entering `I have read and agree to the <a href="https://www.google.com">Terms and Conditions</a>` into the **Text** property will include a hyperlink to google.com in the inline checkbox label.
+
+A custom error message can be entered in the **Error message** field. If it is left blank, the component will fall back to the default `requiredagreementcomponent.error.notchecked` resource string value.
+
+Both of these properties accept localization macros in the format {$resourcekeyname$}
